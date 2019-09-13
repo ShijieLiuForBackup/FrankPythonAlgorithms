@@ -1,0 +1,25 @@
+Binary Index Search for a specific number in an Array, sorted array is a must. 
+二分法， 在一个顺序数组中寻找一个数字的具体位置。
+from math import floor
+
+def binary_search(Array, item):
+    low = 0
+    high = len(Array) - 1
+    while low <= high:
+        mid = floor((low+high)/2)
+        if item > Array[mid]:
+        #if Array[mid] < item:
+            low = mid + 1
+        elif Array[mid] > item:
+            high = mid + 1
+        else:
+            return mid
+    return -1
+
+A = [1,2,3,4,13,12,34,23,45]
+num= 13
+index = binary_search(A, num)
+if index >= 0:
+    print("{} is at index of {} ".format(A[index], index))
+else:
+    print("search item not found")
