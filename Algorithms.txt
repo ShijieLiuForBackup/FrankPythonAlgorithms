@@ -23,3 +23,17 @@ if index >= 0:
     print("{} is at index of {} ".format(A[index], index))
 else:
     print("search item not found")
+	
+	
+def findsmallest(arr):
+    smallest = arr[0] #store the smallest number 储存最小元素的值
+    smallest_index = 0 #store the index of the smallest number 储存最小元素的值的位置
+    for i in range(0,len(arr)):
+        if arr[i] < smallest:
+            smallest = arr[i]
+            smallest_index = i + 1
+    return smallest, smallest_index
+    
+a = [89,5,43,67,4,6,8,54,3]
+b = findsmallest(a)
+print(b)
